@@ -1,0 +1,13 @@
+.component-wrapper{
+   
+}
+.accordionContainer{
+   background-color: lightblue;
+    margin:2px;
+    padding:12px;
+}
+.accordionContent{
+    margin-left:12px;
+    margin-top:12px;
+    margin-bottom:12px;
+}
