@@ -1,0 +1,36 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tabs_component {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.tab_headers {
+  display: flex;
+}
+.tab_btn {
+  padding: 10px 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.active {
+  background-color: green;
+  color: white;
+}
+.tabs-panel {
+  width: 430px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid grey;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
