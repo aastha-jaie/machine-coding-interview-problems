@@ -1,2 +1,3 @@
-# machine-coding-interview-problems
-In this repository, I will write all the machine coding questions that are frequently asked in interviews from engineers.
+Just Like DSA, Even React Machine coding also has patterns
+
+Solving recent machine coding problems while segregrating it into different patterns
