@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.autocomplete_container__fields {
+  display: flex;
+  gap: 10px;
+}
+h1 {
+  text-align: center;
+}
+input {
+  padding: 8px;
+  width: 300px;
+  border-radius: 8px;
+}
+.btn {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: green;
+  color: white;
+}
+.autocomplete_container__list {
+  list-style-type: none;
+  margin-top: 0px;
+  padding-left: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+.autocomplete_container__list_item {
+  border-bottom: 1px solid grey;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.part {
+  color: blue;
+}
