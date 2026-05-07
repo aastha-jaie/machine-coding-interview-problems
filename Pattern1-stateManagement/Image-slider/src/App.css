@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  max-height: 500px;
+  max-width: 500px;
+}
+.btn {
+  padding: 18px;
+  background-color: black;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 24px;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-next{
+  animation: slideRight 0.2s ease-in-out;
+}
+.slider-prev{
+  animation: slideLeft 0.2s ease-in-out;
+}
