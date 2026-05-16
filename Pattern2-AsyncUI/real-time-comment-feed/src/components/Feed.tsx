@@ -12,7 +12,7 @@ function Feed() {
     const [comments, setComments] = useState<Comment[]>([]);
     const [newComments, setNewComments] = useState<Set<number>>(new Set());
 
-    const offsetRef = useRef(0);
+    const offsetRef = useRef(0); //using Ref instead of state here, because change in offsetRef doesn't impact rendering on the UI
     const hasFetched = useRef(false)
 
     const fetchComments = async(currentOffset: number)=>{
