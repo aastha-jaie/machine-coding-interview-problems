@@ -1,0 +1,19 @@
+li{
+    list-style-type: none;
+    border: 1px solid #eee;
+    padding: 4px;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+}
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.highlight{
+    background-color: yellow;
+    transition:background-color 0.5s ease;
+}
