@@ -33,6 +33,7 @@ input {
   border-bottom: 1px solid grey;
   padding-bottom: 10px;
   padding-top: 10px;
+  cursor:pointer;
 }
 .part {
   color: blue;

@@ -1,6 +1,6 @@
 import '../App.css';
 import React from 'react';
-const AutocompleteResults = ({ results, value }) => {
+const AutocompleteResults = ({ results, value, setValue }) => {
   // Highlight matching text
   function highlightText(text) {
     const parts = text.split(new RegExp(`(${value})`, "gi"));
@@ -15,10 +15,13 @@ const AutocompleteResults = ({ results, value }) => {
       ),
     );
   }
+  function onListItemClick (item){
+    setValue(item.title);
+  }
   return (
     <ul className="autocomplete_container__list">
       {results?.map((item) => (
-        <li className="autocomplete_container__list_item">
+        <li className="autocomplete_container__list_item" onClick={()=>onListItemClick(item)}>
           {highlightText(item.title)}
         </li>
       ))}

@@ -5,7 +5,8 @@ import Autocomplete from "./components/Autocomplete";
 function App() {
   return (
     <>
-      <Autocomplete />
+    <h2>Search anywhere in the world</h2>
+    <Autocomplete />
     </>
   );
 }

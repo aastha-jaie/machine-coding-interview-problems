@@ -81,9 +81,9 @@ const Autocomplete = () => {
     }
   },[results, activeIndex]);
 
+
   return (
     <div className="autocomplete_container" ref={containerRef}>
-      <h1>Autocomplete UI</h1>
       <div className="autocomplete_container__fields">
         <input
           type="text"
@@ -95,7 +95,7 @@ const Autocomplete = () => {
       </div>
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      <AutocompleteResults results={results} value={value} />
+      <AutocompleteResults results={results} value={value} setValue={setValue}/>
     </div>
   );
 };
