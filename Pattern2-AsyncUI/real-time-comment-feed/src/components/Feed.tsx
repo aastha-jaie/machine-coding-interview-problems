@@ -11,13 +11,18 @@ function Feed() {
 
     const [comments, setComments] = useState<Comment[]>([]);
     const [newComments, setNewComments] = useState<Set<number>>(new Set());
+    const [offSet, setOffset] = useState(0)
 
-    const offsetRef = useRef(0); //using Ref instead of state here, because change in offsetRef doesn't impact rendering on the UI
+    const offsetRef = useRef(null); //using Ref instead of state here, because change in offsetRef doesn't impact rendering on the UI
     const hasFetched = useRef(false)
 
-    const fetchComments = async(currentOffset: number)=>{
+    const fetchComments = async(currentOffset: number, abortSignal: AbortSignal)=>{
         try{    
-            const response = await fetch(`${url}?limit=${LIMIT}&skip=${currentOffset}`)
+
+
+            const response = await fetch(`${url}?limit=${LIMIT}&skip=${currentOffset}`, {
+                signal: abortSignal
+            })
             const data = await response.json();
 
             const fetchedComments = data.comments;
@@ -40,20 +45,28 @@ function Feed() {
     }
 
     useEffect(()=>{
-        if(hasFetched.current) return; //to prevent useEffect calling twice
+        
+    
+        const abc = new AbortController()
 
-        hasFetched.current = true;
+        fetchComments(offSet, abc.signal);
 
-        //Initialize API call
-        fetchComments(0);
+        return () => {
+            abc.abort()
+        }
 
+    },[offSet])
+
+
+
+    useEffect(() => {
         //Poll every 2 seconds
         const intervalId = setInterval(()=>{
-            offsetRef.current = offsetRef.current + LIMIT;
-            fetchComments(offsetRef.current);
+            setOffset(pev => pev + LIMIT)
         },3000);
 
-    },[])
+        return ()=>clearInterval(intervalId);
+    }, [])
   return (
     <ul>
       {comments.map((comment)=><Comment comment= {comment} key={comment.id} newComments ={newComments}/>)}
