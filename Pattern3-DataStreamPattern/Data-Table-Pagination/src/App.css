@@ -1,0 +1,35 @@
+.data-table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+table{
+ border-collapse: collapse;
+}
+th,td{
+  border: 1px solid #ddd;
+  padding:10px;
+}
+th{
+  vertical-align: top;
+}
+.pagination{
+  display: flex;
+  gap:10px;
+  margin-top:10px;
+  align-items: center;
+  justify-content: center;
+}
+img{
+  width:10px;
+  height:10px;
+}
+button{
+  padding:8px 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color:navy;
+  border: none;
+  color:white;
+}
